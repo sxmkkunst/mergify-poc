@@ -1,0 +1,13 @@
+name: Test Workflow
+
+on:
+  pull_request:
+  
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Tell us tests failed
+      run: echo "Tests failed"
+    - name: Fail tests
+      run: exit 1
