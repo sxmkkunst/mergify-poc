@@ -1,3 +1,7 @@
 see if this gets auto merged when one approval is provided
 auto merge test
+<<<<<<< HEAD
 cool new stuff that should be backported to future releases 4
+=======
+cool new stuff that should be backported to future releases 5
+>>>>>>> 4ceac5f (Update test.txt)
