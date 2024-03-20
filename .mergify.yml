@@ -1,1 +1,14 @@
-
+pull_request_rules:
+  - name: Automatic merge for Dependabot PRs with patch updates
+    conditions:
+      - author = dependabot[bot]
+      - dependabot-update-type = version-update:semver-patch
+    actions:
+      merge:
+        method: merge
+  - name: Automatic merge when CI has at least one approval
+    conditions:
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: merge
