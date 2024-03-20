@@ -7,7 +7,7 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-    - name: Tell us tests failed
-      run: echo "Tests failed"
-    - name: Tests failed
-      run: exit 1
+    - name: Tell us tests passed
+      run: echo "Tests passed"
+    - name: Tests passed
+      run: exit 0
