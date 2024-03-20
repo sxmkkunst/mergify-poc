@@ -15,7 +15,6 @@ pull_request_rules:
         method: merge
 
   - name: "backport from 1.0.0 to 2.0.0"
-    conditions:
     actions:
       backport:
         branches:
