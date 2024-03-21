@@ -21,3 +21,9 @@ pull_request_rules:
       backport:
         branches:
           - "release/2.0.0"
+
+queue_rules:
+  - name: default
+    queue_conditions:
+      - check-success = greet
+      - "#approved-reviews-by >= 1"
