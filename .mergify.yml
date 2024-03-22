@@ -21,7 +21,7 @@ pull_request_rules:
       - check-success = greet
     actions:
       queue:
-        name: default
+        name: batch-queue
 
   - name: "backport from 1.0.0 to 2.0.0"
     conditions:
@@ -35,3 +35,7 @@ queue_rules:
   - name: default
     queue_conditions:
       - "#approved-reviews-by >= 1"
+  - name: batch-queue
+    queue_conditions:
+      - "#approved-reviews-by >= 1"
+    batch_size: 3
