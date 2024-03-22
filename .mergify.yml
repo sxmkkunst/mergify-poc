@@ -10,9 +10,18 @@ pull_request_rules:
   # - name: Automatic merge when CI has at least one approval
   #   conditions:
   #     - "#approved-reviews-by>=1"
+  #     - check-success = greet
   #   actions:
   #     merge:
   #       method: merge
+
+  - name: Add PR to merge queue when CI passes and has at least one approval
+    conditions:
+      - "#approved-reviews-by>=1"
+      - check-success = greet
+    actions:
+      queue:
+        name: default
 
   - name: "backport from 1.0.0 to 2.0.0"
     conditions:
@@ -25,5 +34,4 @@ pull_request_rules:
 queue_rules:
   - name: default
     queue_conditions:
-      - check-success = greet
       - "#approved-reviews-by >= 1"
