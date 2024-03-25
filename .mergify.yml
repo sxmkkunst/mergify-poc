@@ -10,7 +10,7 @@ pull_request_rules:
         
   - name: Automatic merge ignore Branch Protection
     conditions:
-      - label = dummy
+      - label = override
     actions:
       queue:
         name: override
@@ -41,5 +41,5 @@ queue_rules:
     batch_size: 3
   - name: override
     queue_conditions:
-      - label = dummy
+      - label = override
     branch_protection_injection_mode: none
