@@ -15,6 +15,13 @@ pull_request_rules:
   #     merge:
   #       method: merge
 
+ - name: Automatic merge ignore Branch Protection
+    conditions:
+      - label = dummy
+    actions:
+      merge:
+        method: merge
+
   - name: Add PR to merge queue when CI passes and has at least one approval
     conditions:
       - "#approved-reviews-by>=1"
