@@ -10,10 +10,11 @@ pull_request_rules:
         
   - name: Automatic merge ignore Branch Protection
     conditions:
-      - label = override
+      - label = dummy
     actions:
       queue:
         name: override
+        merge_bot_account: sxmkkunst
 
   - name: Add PR to merge queue when CI passes and has at least one approval
     conditions:
@@ -41,5 +42,5 @@ queue_rules:
     batch_size: 3
   - name: override
     queue_conditions:
-      - label = override
+      - label = dummy
     branch_protection_injection_mode: none
